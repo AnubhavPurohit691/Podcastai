@@ -20,6 +20,7 @@ function App() {
       </div>
       <PdfUpload/>
       {/* <StickyScrollRevealDemo/> */}
+      <MarqueeDemo/>
       </>
 
   )

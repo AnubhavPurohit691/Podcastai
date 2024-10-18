@@ -20,7 +20,8 @@ function App() {
       </div>
       <PdfUpload/>
       {/* <StickyScrollRevealDemo/> */}
-      <MarqueeDemo/>
+      {/* <MarqueeDemo/> */}
+      {/* this is review component */}
       </>
 
   )

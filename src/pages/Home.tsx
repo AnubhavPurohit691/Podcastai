@@ -1,9 +1,9 @@
 import Firstpage from "../components/Firstpage"
 import { BackgroundBeamsWithCollision } from "../components/ui/backgroundbeam"
 import Neonimage from "../assets/Neonpodcast.png"
-import { MarqueeDemo } from "../components/Reviewcomponent"
+// import { MarqueeDemo } from "../components/Reviewcomponent"
 import PdfUpload from "../components/Fileupload"
-import { StickyScrollRevealDemo } from "../components/Stickyscroll"
+// import { StickyScrollRevealDemo } from "../components/Stickyscroll"
 
 function App() {
 

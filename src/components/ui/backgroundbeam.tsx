@@ -22,47 +22,47 @@ export const BackgroundBeamsWithCollision = ({
       delay: 2,
     },
     {
-      initialX: 600,
-      translateX: 600,
+      initialX: 300, // Adjusted for smaller screens
+      translateX: 300,
       duration: 3,
       repeatDelay: 3,
       delay: 4,
     },
     {
-      initialX: 100,
-      translateX: 100,
+      initialX: 50,
+      translateX: 50,
       duration: 7,
       repeatDelay: 7,
-      className: "h-6",
+      className: "h-4 md:h-6", // Responsive height
     },
     {
-      initialX: 400,
-      translateX: 400,
+      initialX: 200,
+      translateX: 200,
       duration: 5,
       repeatDelay: 14,
       delay: 4,
     },
     {
-      initialX: 800,
-      translateX: 800,
+      initialX: 400,
+      translateX: 400,
       duration: 11,
       repeatDelay: 2,
-      className: "h-20",
+      className: "h-10 md:h-20", // Responsive height
     },
     {
-      initialX: 1000,
-      translateX: 1000,
+      initialX: 500,
+      translateX: 500,
       duration: 4,
       repeatDelay: 2,
-      className: "h-12",
+      className: "h-6 md:h-12", // Responsive height
     },
     {
-      initialX: 1200,
-      translateX: 1200,
+      initialX: 600,
+      translateX: 600,
       duration: 6,
       repeatDelay: 4,
       delay: 2,
-      className: "h-6",
+      className: "h-3 md:h-6", // Responsive height
     },
   ];
 
@@ -70,8 +70,7 @@ export const BackgroundBeamsWithCollision = ({
     <div
       ref={parentRef}
       className={cn(
-        " h-screen bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden",
-        // h-screen if you want bigger
+        "h-screen bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden",
         className
       )}
     >
@@ -200,7 +199,7 @@ const CollisionMechanism = React.forwardRef<
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
         className={cn(
-          "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent",
+          "absolute left-0 top-20 m-auto h-8 md:h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent",
           beamOptions.className
         )}
       />
@@ -208,7 +207,7 @@ const CollisionMechanism = React.forwardRef<
         {collision.detected && collision.coordinates && (
           <Explosion
             key={`${collision.coordinates.x}-${collision.coordinates.y}`}
-            className=""
+            className="w-6 h-6 md:w-10 md:h-10" // Responsive explosion size
             style={{
               left: `${collision.coordinates.x}px`,
               top: `${collision.coordinates.y}px`,
@@ -239,7 +238,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
+        className="absolute -inset-x-5 md:-inset-x-10 top-0 m-auto h-1 w-5 md:h-2 md:w-10 rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
       ></motion.div>
       {spans.map((span) => (
         <motion.span
@@ -251,7 +250,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
             opacity: 0,
           }}
           transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
-          className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"
+          className="absolute h-1 w-1 md:h-2 md:w-2 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"
         />
       ))}
     </div>

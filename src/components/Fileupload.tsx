@@ -25,7 +25,7 @@ export default function PdfUpload() {
     const droppedFile = e.dataTransfer.files[0]
     if (droppedFile && droppedFile.type === 'application/pdf') {
       setFile(droppedFile)
-      uploadFile(droppedFile)
+      uploadFile()
     }
   }, [])
 
@@ -33,11 +33,11 @@ export default function PdfUpload() {
     const selectedFile = e.target.files?.[0]
     if (selectedFile && selectedFile.type === 'application/pdf') {
       setFile(selectedFile)
-      uploadFile(selectedFile)
+      uploadFile()
     }
   }, [])
 
-  const uploadFile = (file: File) => {
+  const uploadFile = () => {
     setIsUploading(true)
     // Simulating file upload
     setTimeout(() => {
